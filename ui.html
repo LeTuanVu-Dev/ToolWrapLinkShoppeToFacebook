@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopee Link Wrapper</title>
+    <link rel="stylesheet" href="uicss.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Shopee Link Wrapper</h1>
+        <div class="input-section">
+            <label for="shopeeLink">Nhập link Shopee:</label>
+            <input type="text" id="shopeeLink" placeholder="https://shopee.vn/...">
+            <button onclick="processLink()">Xử lý</button>
+        </div>
+        <div class="result-section">
+            <h2>Kết quả:</h2>
+            <div class="result-box">
+                <input type="text" id="resultLink" readonly>
+                <button onclick="copyToClipboard()">Sao chép</button>
+            </div>
+        </div>
+    </div>
+    <script src="logic.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="" id="ogTitle">
+    <meta property="og:description" content="" id="ogDescription">
+    <meta property="og:image" content="" id="ogImage">
+    <title>Redirect Page</title>
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const redirectUrl = urlParams.get('url');
+            const title = urlParams.get('title');
+            const description = urlParams.get('description');
+            const image = urlParams.get('image');
+
+            // Cập nhật meta tags
+            if (title) document.getElementById('ogTitle').setAttribute('content', title);
+            if (description) document.getElementById('ogDescription').setAttribute('content', description);
+            if (image) document.getElementById('ogImage').setAttribute('content', image);
+
+            // Chuyển hướng sau 1 giây
+            if (redirectUrl) {
+                setTimeout(() => {
+                    window.location.href = decodeURIComponent(redirectUrl);
+                }, 1000);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center; padding: 20px;">
+        Đang chuyển hướng...
+    </div>
+</body>
+</html> 
