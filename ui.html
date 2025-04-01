@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopee Link Wrapper</title>
     <link rel="stylesheet" href="uicss.css">
-     <script>
+    <script>
         window.onload = function() {
-            window.location.href = "https://shopee.vn/T%C3%BAi-%C4%91eo-ch%C3%A9o-nam-v%E1%BA%A3i-canvas-ch%E1%BB%91ng-n%C6%B0%E1%BB%9Bc-3-ng%C4%83n-phong-c%C3%A1ch-H%C3%A0n-Qu%E1%BB%91c-i.85252593.6836210439"; // Thay bằng link sản phẩm Shopee của bạn
+            var url = "https://shopee.vn/T%C3%BAi-%C4%91eo-ch%C3%A9o-nam-v%E1%BA%A3i-canvas-ch%E1%BB%91ng-n%C6%B0%E1%BB%9Bc-3-ng%C4%83n-phong-c%C3%A1ch-H%C3%A0n-Qu%E1%BB%91c-i.85252593.6836210439"; // Thay bằng link Shopee của bạn
+            if (navigator.userAgent.match(/Android|iPhone|iPad|iPod/i)) {
+                // Nếu là thiết bị di động, mở trên trình duyệt mặc định
+                window.open(url, "_system");
+            } else {
+                // Nếu là máy tính, mở như bình thường
+                window.location.href = url;
+            }
         };
     </script>
 </head>
