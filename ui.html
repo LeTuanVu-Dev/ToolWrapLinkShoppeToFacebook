@@ -7,24 +7,17 @@
     <link rel="stylesheet" href="uicss.css">
     <script>
   window.onload = function () {
-    var productId = "6158316169";
-    var shopeeUniversalLink = "https://www.facebook.com/l.php?u=https://shopee.vn/universal-link/product/" + productId;
+      var productId = "6158316169";
+        var deepLink = "shopee://product/" + productId;
+        var fallbackUrl = "https://shopee.vn/universal-link/product/" + productId;
 
-    // Kiểm tra thiết bị di động
-    var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        // Mở deep link trước
+        window.location.href = deepLink;
 
-    if (isMobile) {
-      // Thử mở universal link — nếu app Shopee được cài, app sẽ mở
-      window.location.href = shopeeUniversalLink;
-
-      // Tuỳ chọn: fallback nếu app không mở trong 3s → chuyển đến trang web
-      setTimeout(function () {
-        window.location.href = shopeeUniversalLink;
-      }, 3000);
-    } else {
-      // Trên máy tính thì mở web như bình thường
-      window.location.href = shopeeUniversalLink;
-    }
+        // Nếu không mở được app, fallback sau 2.5s
+        setTimeout(function () {
+          window.location.href = fallbackUrl;
+        }, 2500);
   };
 </script>
 
